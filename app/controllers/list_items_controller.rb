@@ -8,7 +8,7 @@ class ListItemsController < ApplicationController
     @list = List.find(params[:list_id])
     @list_item = @list.list_items.new(list_item_params)
     if @list_item.save
-      redirect_to list_path(@list)
+      redirect_to root_path
     else
       render :new, status: :unprocessable_entity
     end
