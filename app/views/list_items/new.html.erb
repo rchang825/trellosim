@@ -1,10 +1,10 @@
 <turbo-frame id=<%="add_to_list_#{@list.id}"%>>
-Add Item to List
-<%= form_for [@list, @list_item] do |form| %>
-    <%= form.label :item_type %>
-    <%= form.select(:item_type, @item_type_options) %>
-    <%= form.label :content %>
-    <%= form.text_field :content %>
-    <%= form.submit "Add", data: {turbo_frame: "list_#{@list.id}"} %>
-<% end %>
+    Add Item to List
+    <%= form_for [@list, @list_item] do |form| %>
+        <%= form.label :item_type %>
+        <%= form.select(:item_type, @item_type_options) %>
+        <%= form.label :content %>
+        <%= form.text_field :content %>
+        <%= form.submit "Add", data: {turbo_frame: "list_#{@list.id}"} %>
+    <% end %>
 </turbo-frame>

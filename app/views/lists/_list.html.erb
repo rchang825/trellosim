@@ -1,11 +1,12 @@
 <turbo-frame id=<%="list_#{list.id}"%>>
-<strong><%= list.title %></strong>
-<br>
-<turbo-frame id=<%="add_to_list_#{list.id}"%>>
-    <%= link_to "Add Item", new_list_list_item_path(list) %>
-</turbo-frame>
-
-<% list.list_items.each do |list_item| %>
-    <%= render partial: "list_items/list_item", locals: {list_item: list_item} %>
-<% end %>
+    <strong><%= list.title %></strong>
+    <br>
+    <turbo-frame id=<%="add_to_list_#{list.id}"%>>
+        <%= link_to "Add Item", new_list_list_item_path(list) %>
+    </turbo-frame>
+    <ul>
+        <% list.list_items.each do |list_item| %>
+            <%= render partial: "list_items/list_item", locals: {list_item: list_item} %>
+        <% end %>
+    </ul>
 </turbo-frame>

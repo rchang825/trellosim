@@ -1,0 +1,8 @@
+.lists-container {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+.lists-container .list-item {
+    text-align: left;
+}
