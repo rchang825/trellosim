@@ -1,0 +1,4 @@
+<h1>All Lists</h1>
+<% @lists.each do |list| %>
+    <%= render partial: "list", locals: {list: list} %>
+<% end %>

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :list_items
-  resources :lists
+  resources :lists do
+    resources :list_items, shallow: true
+  end
   get 'home/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
