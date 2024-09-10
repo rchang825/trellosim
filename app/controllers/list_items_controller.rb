@@ -1,5 +1,6 @@
 class ListItemsController < ApplicationController
   def new
+    @item_type_options = ["todo", "note"]
     @list = List.find(params[:list_id])
     @list_item = @list.list_items.new
   end
