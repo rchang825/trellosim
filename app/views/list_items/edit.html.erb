@@ -1,7 +1,10 @@
+<turbo-frame id=<%="edit_item_#{@list_item.id}_from_#{@list.id}"%>>
 <%= form_for [@list, @list_item], url: list_item_path, method: :patch do |form| %>
-    <%= form.label :content %>
-    <%= form.text_field :content %>
+    <%= form.text_field :content %> 
+    <br />
     <%= form.label :list_id %>
-    <%= form.select(:list_id, @item_list_options) %>
-    <%= form.submit "Move"%>
+    <%= form.select(:list_id, @item_list_options) %> 
+    <br />
+    <%= form.submit "Save", data: {turbo_frame: "_top"}%>
 <% end %>
+</turbo-frame>
