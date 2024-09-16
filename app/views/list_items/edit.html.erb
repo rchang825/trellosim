@@ -1,0 +1,7 @@
+<%= form_for [@list, @list_item], url: list_item_path, method: :patch do |form| %>
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+    <%= form.label :list_id %>
+    <%= form.select(:list_id, @item_list_options) %>
+    <%= form.submit "Move"%>
+<% end %>

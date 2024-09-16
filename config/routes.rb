@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :lists do
     resources :list_items, shallow: true
   end
+  resources :list_items
   get 'home/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

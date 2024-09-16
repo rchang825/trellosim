@@ -1,4 +1,4 @@
 <div class="list-item">
-    <li><%= list_item.content %></li>
+    <li><%= link_to list_item.content, edit_list_item_path(list_item), data: {turbo_frame: "_top"} %></li>
 </div>
 <br>
