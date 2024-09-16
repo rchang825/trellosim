@@ -6,3 +6,10 @@
 .lists-container .list-item {
     text-align: left;
 }
+.list-item a {
+    color: black;
+    text-decoration: none;
+}
+.form {
+    text-align: left;
+}

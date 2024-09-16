@@ -2,10 +2,10 @@
     <strong><%= list.title %></strong>
     <br>
     <turbo-frame id=<%="add_to_list_#{list.id}"%>>
-        <%= link_to "Add Item", new_list_list_item_path(list) %>
+        <%= button_to "Add Item", new_list_list_item_path(list), method: :get %>
     </turbo-frame>
     <ul>
-        <% list.list_items.each do |list_item| %>
+        <% list.list_items.order("updated_at DESC").each do |list_item| %>
             <%= render partial: "list_items/list_item", locals: {list_item: list_item} %>
         <% end %>
     </ul>
