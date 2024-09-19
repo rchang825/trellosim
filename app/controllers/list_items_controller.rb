@@ -23,11 +23,10 @@ class ListItemsController < ApplicationController
     @item_list_options = List.all.map{ |list| [list.title, list.id] }
   end
   def update
+
     @list_item = ListItem.find(params[:id])
     if @list_item.update(list_item_params)
       redirect_to root_path
-    else
-      render :new, status: :unprocessable_entity
     end
   end
 

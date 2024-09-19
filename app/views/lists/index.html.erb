@@ -1,8 +1,10 @@
 <h1>All Lists</h1>
 <%= link_to "New List", new_list_path %>
 <br>
-<div class="lists-container">
-    <% @lists.each do |list| %>
-        <%= render partial: "list", locals: {list: list} %>
-    <% end %>
-</div>
+<turbo-frame id="lists_container">
+    <div class="lists-container">
+        <% @lists.each do |list| %>
+            <%= render partial: "list", locals: {list: list} %>
+        <% end %>
+    </div>
+</turbo-frame>

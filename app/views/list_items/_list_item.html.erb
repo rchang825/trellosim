@@ -1,6 +1,22 @@
 <div class="list-item">
+    
     <turbo-frame id=<%="edit_item_#{list_item.id}_from_#{list_item.list_id}"%>>
         <li><%= link_to list_item.content, edit_list_item_path(list_item) %></li>
+        <div class="flex-container">
+            <% if prev_list %>
+                <%= form_with model: list_item, url: list_item_path(list_item), method: :patch do |form| %>
+                    <%= form.hidden_field :list_id, value: prev_list.id %>
+                    <%= form.submit "<-", data: {turbo_frame: "lists_container"}%>
+                <% end %>
+            <% end %>
+            <% if next_list %>
+                <%= form_with model: list_item, url: list_item_path(list_item), method: :patch do |form| %>
+                    <%= form.hidden_field :list_id, value: next_list.id %>
+                    <%= form.submit "->", data: {turbo_frame: "lists_container"}%>
+                <% end %>
+            <% end %>
+        </div>
     </turbo-frame>
+    
 </div>
 <br>
