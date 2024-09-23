@@ -2,8 +2,8 @@
     Add Item to List
     <div class="form">
         <%= form_for [@list, @list_item] do |form| %>
-            <%= form.label :item_type %>
-            <%= form.select(:item_type, @item_type_options) %>
+            <%= form.label :type %>
+            <%= form.select(:type, @item_type_options) %>
             <br />
             <%= form.label :content %>
             <%= form.text_field :content %>

@@ -5,6 +5,8 @@
 }
 .lists-container .list-item {
     text-align: left;
+    border-style: dashed;
+    padding: 1em;
 }
 .list-item a {
     color: black;
@@ -15,4 +17,10 @@
 }
 .flex-container {
     display: flex;
+}
+li.no-style-li {
+    list-style-type: none;
+}
+div.checkbox-item {
+    display: inline-flex;
 }
